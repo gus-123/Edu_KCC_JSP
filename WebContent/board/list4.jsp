@@ -4,9 +4,10 @@
 <%@page import="kosa.model.Search"%>
 <%@page import="kosa.model.Board"%>
 <%@page import="java.util.List"%>
-<%@page import="kosa.dao.BoardDao2"%>
+<%@page import="kosa.dao.BoardDao4"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 	request.setCharacterEncoding("utf-8");
 
@@ -32,12 +33,12 @@
    map.put("area", request.getParameterValues("area"));
    map.put("searchKey", "%" + request.getParameter("searchKey")+ "%");
    
-   BoardDao2 dao = BoardDao2.getInstance();
+   BoardDao4 dao = BoardDao4.getInstance();
    List<Board> list = dao.listBoard(map);
    
    //블로그 24.08.02
-   //Blog blog = dao.selectBlog(100);
-   //System.out.println(blog);
+   Blog blog = dao.selectBlog(100);
+   System.out.println(blog);
    
 %>
 <!DOCTYPE html>
@@ -68,7 +69,11 @@
 			<td><a href="/board/detail2.jsp?seq=<%= board.getSeq() %>"><%= board.getTitle() %></a></td>
 			<td><%= board.getWriter() %></td>
 			<td><pre><%= board.getContents() %></pre></td>
-			<td><%= board.getRegdate() %></td>
+			<!-- <td><%= board.getRegdate() %></td> -->
+			<td>
+				<fmt:parseDate var="dt" value="<%= board.getRegdate() %>" pattern="yyyy-MM-dd" />
+				<fmt:formatDate value="${dt }" pattern="yyyy/MM/dd" />
+			</td>
 			<td><%= board.getHitcount() %></td>
 		</tr>
 		<%

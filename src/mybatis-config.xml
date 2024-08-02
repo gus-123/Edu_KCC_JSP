@@ -7,6 +7,8 @@
 	<typeAliases>
 		<typeAlias type="kosa.model.Board" alias = "Board" />
 		<typeAlias type="kosa.model.Search" alias = "Search" />
+		<typeAlias type="kosa.model.Blog" alias = "Blog" />
+		<typeAlias type="kosa.model.Author" alias = "Author" />
 	</typeAliases>
 	
 	<environments default="development">
@@ -20,6 +22,7 @@
 	
 	<mappers>
 		<mapper resource="kosa/mapper/Board.xml" />
+		<mapper resource="kosa/mapper/Blog.xml" />
 	</mappers>
 	
 </configuration>

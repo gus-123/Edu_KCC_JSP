@@ -14,10 +14,10 @@ import kosa.mapper.BoardMapper;
 import kosa.model.Blog;
 import kosa.model.Board;
 
-public class BoardDao2 {
-	private static BoardDao2 dao = new BoardDao2();
+public class BoardDao4 {
+	private static BoardDao4 dao = new BoardDao4();
 	
-	public static BoardDao2 getInstance() {
+	public static BoardDao4 getInstance() {
 		return dao;
 	}
 	
@@ -36,7 +36,6 @@ public class BoardDao2 {
 	}
 	
 	// 블로그 24.08.02
-	/*
 	public Blog selectBlog(int id) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		Blog blog = null;
@@ -52,7 +51,6 @@ public class BoardDao2 {
 		
 		return blog;
 	}
-	*/
 	
 	/* 0번 방법(정적) */ 
 	/*
