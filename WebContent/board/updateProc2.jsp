@@ -2,7 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	request.setCharacterEncoding("utf-8");
+  //UTF-8 필터 적용
+	//request.setCharacterEncoding("utf-8");
 %>
 
 <jsp:useBean id="board" class="kosa.model.Board" />

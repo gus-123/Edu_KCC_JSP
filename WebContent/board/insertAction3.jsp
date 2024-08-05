@@ -4,7 +4,8 @@
     pageEncoding="UTF-8"%>
 
 <%
-	request.setCharacterEncoding("utf-8");
+  //UTF-8 필터 적용
+	//request.setCharacterEncoding("utf-8");
 %> 
 <jsp:useBean id="board" class="kosa.model.Board"/><!-- Board board = new Board() -->
 <jsp:setProperty property="*" name="board"/>  <!-- board.setTitle(request.getParameter("title"))  -->
